@@ -16,7 +16,7 @@ class GoldbachConjecture {
         }
         return primes;
     }
-    
+
     public static ArrayList<Integer> nums(int m) {  
         ArrayList<Integer> ans = new ArrayList<Integer>();
         ArrayList<Integer> primesList = new ArrayList<Integer>();
@@ -24,8 +24,9 @@ class GoldbachConjecture {
         int num1 = primesList.get(0);
         int num2 = primesList.get(0);
         for(int i = 0; i < primesList.size(); i++) {
-            if(m - num1 == primesList.get(i)) num2 = primesList.get(i);
+            if(primesList.contains(m - num1)) num2 = primesList.get(i);
             else num1 = primesList.get(i);
+
         }
         ans.add(num1);
         ans.add(num2);
@@ -33,7 +34,9 @@ class GoldbachConjecture {
     }
 
     public static void main(String[] args) {
-         System.out.println(nums(16));
+        System.out.println(nums(16));
+        System.out.println(nums(20));
+        System.out.println(nums(144));
     }
 
 }
